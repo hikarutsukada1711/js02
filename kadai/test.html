@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>sample</title>
+</head>
+<body>
+
+    <ul id="output"></ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript">
+    // JSONデータの取得先
+    var data = [
+    { "name": "山田", "age": 21 },
+    { "name": "佐藤", "age": 56 },
+    { "name": "鈴木", "age": 33 }
+]
+
+
+localStorage.test = JSON.stringify(data);
+var items = JSON.parse(localStorage.test2);
+var sticky = JSON.parse(localStorage.sticky);
+
+
+for(var i in data){
+    $("#output").append("<li>" + data[i].name + "（" + data[i].age + "才）</li>");
+}
+
+for(var i in data){
+    $("#output").append("<li>" + items[i].name + "（" + items[i].age + "才）</li>");
+}
+
+for(var i in data){
+    $("#output").append("<li>" + sticky[i].html + "</li>");
+}
+
+
+</script>
+</body>
+</html>
